@@ -14,14 +14,24 @@ public class DateFormattingTest {
     private LocalDateTime getLocalDateTime() {
         return LocalDateTime.parse(DATE, DateTimeFormatter.ISO_DATE_TIME);
     }
-    
+
     @Test
-    public void test() {
+    public void testDayOfWeek() {
         // Get current date, then format to day of week, and assert output
 
         Locale locale = new Locale("en_US");
         Temporal certainDate = getLocalDateTime();
         String formatted = DateTimeFormatter.ofPattern("EEEE").withLocale(locale).format(certainDate);
+        System.out.println(formatted);
+    }
+
+    @Test
+    public void testMonth() {
+        // Get current date, then format to day of week, and assert output
+
+        Locale locale = new Locale("en_US");
+        Temporal certainDate = getLocalDateTime();
+        String formatted = DateTimeFormatter.ofPattern("MMMM").withLocale(locale).format(certainDate);
         System.out.println(formatted);
     }
 
